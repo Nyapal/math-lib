@@ -1,4 +1,4 @@
-class Number {
+class NyasNumber {
 
     constructor(value) {
         this.value = value
@@ -33,8 +33,11 @@ class Number {
     // Challenge 3 pad(x, y) - pads Number with x 0s before, and y 0s after.
     // Example: 34.801.pad(4,4) -> 0034.8010 (notice the 0s added ont he left and right sides)
     pad(x, y) {
+        // split the number at the '.'
+        console.log(this.value)
         return "I'll come back to this"
     }
+    
 
     // Challenge 4 degToRad(n)
     // Strategy: Write a function that takes a number and returns the results of this formula: deg * (Math.PI / 180)
@@ -90,5 +93,5 @@ class Number {
     // randomRGBColor() - Returns a random hex color
 }
 
-let testing = new Number
-console.log(testing.toDollars(3.95))
+let testing = new NyasNumber(34.801)
+console.log(testing.pad(4, 4))
