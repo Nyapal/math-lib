@@ -33,9 +33,16 @@ class NyasNumber {
     // Challenge 3 pad(x, y) - pads Number with x 0s before, and y 0s after.
     // Example: 34.801.pad(4,4) -> 0034.8010 (notice the 0s added ont he left and right sides)
     pad(x, y) {
-        // split the number at the '.'
-        console.log(this.value)
-        return "I'll come back to this"
+        // convert value into an string & split it at "."
+        let val = this.value.toString().split('.')
+        
+        let leftSide = val[0]
+        let rightSide = val[1]
+        
+        leftSide = leftSide.padStart(x, '0')
+        rightSide = rightSide.padEnd(y, '0')
+        
+        return leftSide + "." + rightSide
     }
     
 
@@ -58,7 +65,7 @@ class NyasNumber {
     // Challenge 6 toDollars(amount) - Formatting money is a common task for software projects. A function could save you time in the future. The goal of this function is to take a numeric value and return a string beginning with a '$' and rounded to two decimal places.
     // Strategy: The Number.toFixed(n) method will do most of the work for you!
     toDollars(amount) {
-        return `$ ${amount}`
+        return `$${amount.toFixed(2)}`
     }
     // Example: toDollars(3.9) -> $3.90 (Note: pads with a 0)
     // Stretch Goals: Create a currency formatting function that simplifies the use of: Intl.NumberFormat
@@ -94,4 +101,4 @@ class NyasNumber {
 }
 
 let testing = new NyasNumber(34.801)
-console.log(testing.pad(4, 4))
+console.log(testing.toDollars(5))
